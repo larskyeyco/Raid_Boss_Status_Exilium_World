@@ -25,5 +25,7 @@ namespace Raid_Boss_Status
                     Spawn_Date = raid.SelectNodes(".//td")[3].InnerText.Replace("\n", "").Trim().Replace("\t", "").ToString()
                     }
             });
+            }
+        }
     }
 }
