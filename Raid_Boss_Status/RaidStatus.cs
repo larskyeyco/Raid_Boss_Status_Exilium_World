@@ -37,6 +37,9 @@ namespace Raid_Boss_Status
                     Console.WriteLine(item.Spawn_Date + "\t" + item.Level + "\t" + item.Name);
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\t\tPress F10 to refresh!");
+            Console.ResetColor();
         }
     }
 }
