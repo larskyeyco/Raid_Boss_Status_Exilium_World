@@ -26,6 +26,17 @@ namespace Raid_Boss_Status
                     }
             });
             }
+            foreach (var item in raidBossList.OrderByDescending(x => x.Spawn_Date).Where(x => x.Level >= 80))
+            {
+                if (item.Spawn_Date == "Alive")
+                {
+                    Console.WriteLine(item.Level + "\t" + item.Status + "\t" + item.Name);
+                }
+                else
+                {
+                    Console.WriteLine(item.Spawn_Date + "\t" + item.Level + "\t" + item.Name);
+                }
+            }
         }
     }
 }
