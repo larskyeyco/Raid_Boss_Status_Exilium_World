@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raid_Boss_Status", "Raid_Boss_Status\Raid_Boss_Status.csproj", "{0ADE20B5-D1B9-4D09-902B-08E88ED8E994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raid_Boss_Status", "Raid_Boss_Status\Raid_Boss_Status.csproj", "{0ADE20B5-D1B9-4D09-902B-08E88ED8E994}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{63CA30C9-0BBE-4669-AEB4-E563D6B6D141}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\OneDrive\Visual_Studio\exilium_project\1.png = ..\..\..\OneDrive\Visual_Studio\exilium_project\1.png
+		..\..\..\OneDrive\Visual_Studio\exilium_project\2.png = ..\..\..\OneDrive\Visual_Studio\exilium_project\2.png
+		..\..\..\OneDrive\Visual_Studio\exilium_project\3.png = ..\..\..\OneDrive\Visual_Studio\exilium_project\3.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
