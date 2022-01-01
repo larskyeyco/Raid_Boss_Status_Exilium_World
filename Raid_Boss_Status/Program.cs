@@ -2,11 +2,11 @@
 
 namespace Raid_Boss_Status
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RaidStatus.RaidBossList();
         }
     }
 }
