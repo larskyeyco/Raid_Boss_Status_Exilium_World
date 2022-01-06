@@ -11,7 +11,8 @@ namespace Raid_Boss_Status
         {
             var raidBossList = new List<RaidBossModel>();
             HtmlWeb web = new HtmlWeb();
-            HtmlDocument document = web.Load("https://www.exiliumworld.com/servers/faris/boss");
+            var websiteBossList = "https://www.exiliumworld.com/servers/faris/boss";
+            HtmlDocument document = web.Load(websiteBossList);
             var raids = document.DocumentNode.SelectNodes("//table//tbody").Skip(1).First();
             foreach (var raid in raids.SelectNodes(".//tr"))
             {
@@ -24,17 +25,19 @@ namespace Raid_Boss_Status
                     Status = raid.SelectNodes(".//td")[2].InnerText.Replace("\n", "").Trim().Replace("\t", "").ToString(),
                     Spawn_Date = raid.SelectNodes(".//td")[3].InnerText.Replace("\n", "").Trim().Replace("\t", "").ToString()
                     }
-            });
+                });
             }
-            foreach (var item in raidBossList.OrderBy(x => x.Spawn_Date).Where(x => x.Level >= 80))
-            {
-                if (item.Spawn_Date == "Alive")
+            var raidBossListOrderBySpawnDate = raidBossList.OrderBy(x=>x.Spawn_Date);
+            var raidBossListByLevel80Plus = raidBossListOrderBySpawnDate.Where(x => x.Level >= 80);
+            foreach (var raidboss in raidBossListByLevel80Plus)
                 {
-                    Console.WriteLine(item.Level + "\t" + item.Status + "\t" + item.Name);
+                if (raidboss.Spawn_Date == "Alive")
+                {
+                    Console.WriteLine(raidboss.Level + "\t" + raidboss.Status + "\t" + raidboss.Name);
                 }
                 else
                 {
-                    Console.WriteLine(item.Spawn_Date + "\t" + item.Level + "\t" + item.Name);
+                    Console.WriteLine(raidboss.Spawn_Date + "\t" + raidboss.Level + "\t" + raidboss.Name);
                 }
             }
             Console.ForegroundColor = ConsoleColor.Yellow;
